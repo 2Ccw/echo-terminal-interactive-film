@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d10">
+  <title>回声终端 | 互动影游</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <main id="app">
+    <header class="topbar">
+      <div class="brand"><span class="signal"></span>回声终端</div>
+      <div class="chapter" id="chapter">序章</div>
+      <div class="tools">
+        <button class="icon-button" id="sound" title="开启或关闭声音" aria-label="开启或关闭声音">♪</button>
+        <button class="icon-button" id="restart" title="重新开始" aria-label="重新开始">↻</button>
+      </div>
+    </header>
+
+    <section class="intro" id="intro">
+      <p class="eyebrow">交互式悬疑短篇</p>
+      <h1>回声终端</h1>
+      <p class="premise">风暴吞没临港城的最后一夜，一台停机七年的记忆终端突然亮起。屏幕里，是已经失踪的你。</p>
+      <label for="player-name">调查员代号</label>
+      <div class="name-row">
+        <input id="player-name" maxlength="12" value="林岚" autocomplete="off">
+        <button class="primary" id="begin">接入终端 <span>→</span></button>
+      </div>
+      <p class="meta">约 20–30 分钟 · 4 个结局 · 选择自动保存</p>
+    </section>
+
+    <section class="story hidden" id="story" aria-live="polite">
+      <div class="scene-number" id="scene-number">01 / 12</div>
+      <div class="speaker" id="speaker">系统</div>
+      <p class="body-copy" id="body-copy"></p>
+      <div class="echo hidden" id="echo"><span>记忆回响</span><p id="echo-copy"></p></div>
+      <div class="choices" id="choices"></div>
+    </section>
+
+    <section class="ending hidden" id="ending">
+      <p class="eyebrow">终端记录已封存</p>
+      <h2 id="ending-title"></h2>
+      <p id="ending-copy"></p>
+      <div class="ending-stats" id="ending-stats"></div>
+      <button class="primary" id="again">读取另一条时间线 <span>↻</span></button>
+    </section>
+
+    <footer><span id="status">离线剧情就绪</span><span>EP-07 / 临港记忆局</span></footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
